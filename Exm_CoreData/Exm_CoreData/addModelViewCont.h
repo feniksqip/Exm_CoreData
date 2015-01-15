@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  addModelViewCont.h
 //  Exm_CoreData
 //
 //  Created by Admin on 15.01.15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
-
+@interface addModelViewCont : UIViewController
 
 @end
-
