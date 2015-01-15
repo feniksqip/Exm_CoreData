@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface addModelViewCont : UIViewController
+@interface addModelViewCont : UIViewController 
+@property (weak, nonatomic) IBOutlet UITextField *modelField;
+@property (weak, nonatomic) IBOutlet UITextField *numberField;
+@property (weak, nonatomic) IBOutlet UITextField *companyField;
+- (IBAction)saveButton:(id)sender;
 
 @end

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Таблица Моделей...-->
         <scene sceneID="5Yg-cw-G5L">
             <objects>
                 <tableViewController id="XuS-3n-if5" customClass="ViewController" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                     <toolbarItems>
                         <barButtonItem title="Item" id="HkJ-xa-l34"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="edg-OH-nTz">
+                    <navigationItem key="navigationItem" title="Таблица Моделей..." id="edg-OH-nTz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YLW-B2-39a">
                             <connections>
                                 <segue destination="H9l-PA-jzH" kind="push" id="Evy-gC-7BI"/>
@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="1185" y="214"/>
         </scene>
-        <!--Add Model View Cont-->
+        <!--Добавить...-->
         <scene sceneID="c0K-AI-mIO">
             <objects>
                 <viewController id="H9l-PA-jzH" customClass="addModelViewCont" sceneMemberID="viewController">
@@ -52,15 +52,41 @@
                     <view key="view" contentMode="scaleToFill" id="xEm-Mt-oCx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите модель..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-Qf-vTs">
+                                <rect key="frame" x="16" y="125" width="431" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер модели..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-6g-bIK">
+                                <rect key="frame" x="16" y="226" width="431" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите название компании..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VSc-Iy-LLG">
+                                <rect key="frame" x="16" y="324" width="431" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Item" id="qpD-4e-tlR"/>
                         <barButtonItem title="Item" id="VW9-VD-wvo"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="0am-2l-V45">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="99A-e5-d8C"/>
+                    <navigationItem key="navigationItem" title="Добавить..." id="0am-2l-V45">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="99A-e5-d8C">
+                            <connections>
+                                <action selector="saveButton:" destination="H9l-PA-jzH" id="Wnp-a0-l01"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="companyField" destination="VSc-Iy-LLG" id="94f-X9-2ML"/>
+                        <outlet property="modelField" destination="XoE-Qf-vTs" id="q2U-8H-58X"/>
+                        <outlet property="numberField" destination="fcV-6g-bIK" id="GZD-cV-kL4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U9-xu-gou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -34,4 +34,22 @@
 }
 */
 
+- (IBAction)saveButton:(id)sender {
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *_managedObjectContext;
+    if(_managedObjectContext != nil){
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if(coordinator != nil){
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    }
+    
+    return _managedObjectContext;
+}
+
 @end
