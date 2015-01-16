@@ -7,6 +7,7 @@
 //
 
 #import "addModelViewCont.h"
+#import <CoreData/CoreData.h>
 
 @interface addModelViewCont ()
 
@@ -39,12 +40,50 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    for (touches in self.view.subviews) {
+        [_nameField resignFirstResponder];
+        [_numberField resignFirstResponder];
+        [_companyField resignFirstResponder];
+    }
+}
+
+-(NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]){
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (IBAction)saveButton:(id)sender {
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    
+    
+    NSManagedObject *newModel = [NSEntityDescription insertNewObjectForEntityForName:@"Model" inManagedObjectContext:context];
+    [newModel setValue:self.nameField.text forKey:@"name"];
+    [newModel setValue:self.numberField.text forKey:@"number"];
+    [newModel setValue:self.companyField.text forKey:@"company"];
+    
+    NSError *error = nil;
+    if(![context save:&error]){
+        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ура!" message:@"Успешно добавлено!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        [alert show];
+    }
+    
     [_nameField resignFirstResponder];
     [_numberField resignFirstResponder];
     [_companyField resignFirstResponder];
 }
+
+
+
 
 //- (NSManagedObjectContext *)managedObjectContext {
 //    NSManagedObjectContext *_managedObjectContext;

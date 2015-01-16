@@ -3,7 +3,7 @@
     <entity name="Model" syncable="YES">
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Model" positionX="-54" positionY="-9" width="128" height="90"/>
