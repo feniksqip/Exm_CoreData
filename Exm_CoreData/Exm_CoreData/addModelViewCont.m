@@ -73,7 +73,7 @@
         NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ура!" message:@"Успешно добавлено!" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Добавление в таблицу..." message:@"Успешно добавлено!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
     
