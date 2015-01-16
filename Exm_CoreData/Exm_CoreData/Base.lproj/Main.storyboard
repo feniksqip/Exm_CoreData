@@ -53,11 +53,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите модель..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-Qf-vTs">
-                                <rect key="frame" x="16" y="125" width="431" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер модели..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-6g-bIK">
                                 <rect key="frame" x="16" y="226" width="431" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -65,6 +60,11 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите название компании..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VSc-Iy-LLG">
                                 <rect key="frame" x="16" y="324" width="431" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите модель..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoE-Qf-vTs">
+                                <rect key="frame" x="16" y="125" width="431" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -84,7 +84,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="companyField" destination="VSc-Iy-LLG" id="94f-X9-2ML"/>
-                        <outlet property="modelField" destination="XoE-Qf-vTs" id="q2U-8H-58X"/>
+                        <outlet property="nameField" destination="XoE-Qf-vTs" id="z4v-jw-dZB"/>
                         <outlet property="numberField" destination="fcV-6g-bIK" id="GZD-cV-kL4"/>
                     </connections>
                 </viewController>
