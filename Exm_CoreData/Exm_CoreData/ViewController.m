@@ -86,9 +86,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([[segue identifier] isEqualToString:@"UpdateModel"]){
-        NSManagedObject *selectedDevice = [self.model objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-        addModelViewCont *destViewController = segue.destinationViewController;
-        destViewController.model = selectedDevice;
+        NSManagedObject *managedObject = [self.model objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        addModelViewCont *addModelVCtrl = segue.destinationViewController;
+        addModelVCtrl.model = managedObject;
         
     }
 }
