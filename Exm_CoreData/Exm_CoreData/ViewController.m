@@ -65,17 +65,26 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [managedObjectContext deleteObject:[self.model objectAtIndex:indexPath.row]];
-    }
+    NSManagedObjectContext *context = [self managedObjectContext];
     
-    NSError *error = nil;
-    if (![managedObjectContext save:&error]) {
-      //  NSLog(@"Не удалось удалить... %@ %@", error,[error localizedDiscription] );
-        return;
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        [context deleteObject:[self.model objectAtIndex:indexPath.row]];
+        
+        NSError *error = nil;
+        if(![context save:&error]){
+            NSLog(@"Не возможно удалить... %@ %@", error, [error localizedDescription]);
+            return;
+        }
+        
+        [self.model removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
