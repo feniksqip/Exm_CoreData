@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <CoreData/CoreData.h>
+#import "addModelViewCont.h"
 
 @interface ViewController ()
 @property (strong) NSMutableArray *model;
@@ -81,8 +82,15 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"UpdateModel"]){
+        NSManagedObject *selectedDevice = [self.model objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        addModelViewCont *destViewController = segue.destinationViewController;
+        destViewController.model = selectedDevice;
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {

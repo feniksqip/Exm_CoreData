@@ -16,6 +16,7 @@
 		842B7C371A683D3E0040385F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B7C351A683D3E0040385F /* LaunchScreen.xib */; };
 		842B7C431A683D3E0040385F /* Exm_CoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B7C421A683D3E0040385F /* Exm_CoreDataTests.m */; };
 		842B7C4F1A683E7E0040385F /* addModelViewCont.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B7C4E1A683E7E0040385F /* addModelViewCont.m */; };
+		843F088A1A6A94F1002FF9ED /* Ship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 843F08891A6A94F1002FF9ED /* Ship.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		842B7C421A683D3E0040385F /* Exm_CoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Exm_CoreDataTests.m; sourceTree = "<group>"; };
 		842B7C4D1A683E7E0040385F /* addModelViewCont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addModelViewCont.h; sourceTree = "<group>"; };
 		842B7C4E1A683E7E0040385F /* addModelViewCont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addModelViewCont.m; sourceTree = "<group>"; };
+		843F08891A6A94F1002FF9ED /* Ship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ship.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		842B7C221A683D3E0040385F /* Exm_CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				843F08881A6A94DC002FF9ED /* Images */,
 				842B7C4C1A683E610040385F /* Class */,
 				842B7C271A683D3E0040385F /* AppDelegate.h */,
 				842B7C281A683D3E0040385F /* AppDelegate.m */,
@@ -133,6 +136,14 @@
 				842B7C4E1A683E7E0040385F /* addModelViewCont.m */,
 			);
 			name = Class;
+			sourceTree = "<group>";
+		};
+		843F08881A6A94DC002FF9ED /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				843F08891A6A94F1002FF9ED /* Ship.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				842B7C321A683D3E0040385F /* Main.storyboard in Resources */,
 				842B7C371A683D3E0040385F /* LaunchScreen.xib in Resources */,
 				842B7C341A683D3E0040385F /* Images.xcassets in Resources */,
+				843F088A1A6A94F1002FF9ED /* Ship.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +442,7 @@
 				842B7C481A683D3E0040385F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		842B7C491A683D3E0040385F /* Build configuration list for PBXNativeTarget "Exm_CoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +451,7 @@
 				842B7C4B1A683D3E0040385F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -12,8 +12,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ship.jpg" id="DrF-7a-HiB">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="Ybs-6S-1Oj" detailTextLabel="K3s-xa-i8V" style="IBUITableViewCellStyleValue1" id="5c2-VA-YNC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myCell" textLabel="Ybs-6S-1Oj" detailTextLabel="K3s-xa-i8V" style="IBUITableViewCellStyleValue1" id="5c2-VA-YNC">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5c2-VA-YNC" id="F8O-Xk-D2f">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -32,6 +36,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="H9l-PA-jzH" kind="push" identifier="UpdateModel" id="Sen-UA-wTF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -82,6 +89,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ship.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="snO-0q-fGH">
+                                <rect key="frame" x="0.0" y="64" width="227" height="44"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -125,4 +135,10 @@
             <point key="canvasLocation" x="373" y="214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ship.jpg" width="71" height="72"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sen-UA-wTF"/>
+    </inferredMetricsTieBreakers>
 </document>
