@@ -22,9 +22,11 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] init];
     [self.view addGestureRecognizer:tapGesture];
     
-    _nameField.text = [self.model valueForKey:@"name"];
-    _numberField.text = [self.model valueForKey:@"number"];
-    _companyField.text = [self.model valueForKey:@"company"];
+    if (self.model) {
+        _nameField.text = [self.model valueForKey:@"name"];
+        _numberField.text = [self.model valueForKey:@"number"];
+        _companyField.text = [self.model valueForKey:@"company"];
+    }
     
 }
 
@@ -60,12 +62,16 @@
     
     NSManagedObjectContext *context = [self managedObjectContext];
     
-    
-    
-    NSManagedObject *newModel = [NSEntityDescription insertNewObjectForEntityForName:@"Model" inManagedObjectContext:context];
-    [newModel setValue:self.nameField.text forKey:@"name"];
-    [newModel setValue:self.numberField.text forKey:@"number"];
-    [newModel setValue:self.companyField.text forKey:@"company"];
+    if (self.model) {
+        [self.model setValue:self.nameField.text forKey:@"name"];
+        [self.model setValue:self.numberField.text forKey:@"number"];
+        [self.model setValue:self.companyField.text forKey:@"company"];
+    } else {
+        NSManagedObject *newModel = [NSEntityDescription insertNewObjectForEntityForName:@"Model" inManagedObjectContext:context];
+        [newModel setValue:self.nameField.text forKey:@"name"];
+        [newModel setValue:self.numberField.text forKey:@"number"];
+        [newModel setValue:self.companyField.text forKey:@"company"];
+    }
     
     NSError *error = nil;
     if(![context save:&error]){
