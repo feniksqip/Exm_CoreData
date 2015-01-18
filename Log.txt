@@ -1,0 +1,5 @@
+Log For App.
+
+Argument:
+-com.apple.CoreData.SQLDebug 1
+
